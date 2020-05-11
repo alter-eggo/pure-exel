@@ -8,7 +8,8 @@
   "rules": {
     "quotes": [2, "double", { "avoidEscape": true }],
     "object-curly-spacing": [2, "always"],
-    "require-jsdoc": "off"
+    "require-jsdoc": "off",
+    "operator-linebreak": "off"
   },
   "extends": ["eslint:recommended", "google"]
 }
