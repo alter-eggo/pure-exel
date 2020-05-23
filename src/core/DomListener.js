@@ -20,9 +20,8 @@ export class DomListener {
         const name = this.name || "";
         throw new Error(`Method ${method} is not found in ${name} Component`);
       }
-
       this[method] = this[method].bind(this);
-      this.$root.on(listener, this.methodNew);
+      this.$root.on(listener, this[method]);
     });
   }
 
