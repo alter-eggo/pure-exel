@@ -107,6 +107,11 @@
   border: 0.5px solid $primary-color;
   height: 100vh;
   z-index: 10;
+  &:hover,
+  &:active {
+    opacity: 0;
+    cursor: auto;
+  }
 }
 
 .row-resize-line {
@@ -117,4 +122,9 @@
   border-bottom: 0.5px solid $primary-color;
   width: 100vw;
   z-index: 10;
+  &:hover,
+  &:active {
+    opacity: 0;
+    cursor: auto;
+  }
 }
