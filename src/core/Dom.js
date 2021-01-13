@@ -17,7 +17,7 @@ class Dom {
   }
 
   text(text) {
-    if (typeof text === "string") {
+    if (typeof text === "string" || typeof text === "number") {
       this.$el.textContent = text;
       return this;
     }
@@ -55,6 +55,13 @@ class Dom {
       };
     }
     return this.data.id;
+  }
+
+  getStyles(styles = []) {
+    return styles.reduce((res, s) => {
+      res[s] = this.$el.style[s];
+      return res;
+    }, {});
   }
 
   find(selector) {
@@ -103,6 +110,15 @@ class Dom {
 
   removeClass(className) {
     this.$el.classList.remove(className);
+  }
+
+  attr(name, value) {
+    if (value) {
+      this.$el.setAttribute(name, value);
+      return this;
+    }
+
+    return this.$el.getAttribute(name);
   }
 }
 
