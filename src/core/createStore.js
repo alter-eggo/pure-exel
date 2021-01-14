@@ -12,7 +12,7 @@ export class Store {
 
     return {
       unsubscribe() {
-        this.listeners.filter((listener) => listener !== fn);
+        this.listeners?.filter((listener) => listener !== fn);
       },
     };
   }

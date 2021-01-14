@@ -3,8 +3,7 @@ import { Emitter } from "@/core/Emitter";
 import { StoreSubscriber } from "../../core/StoreSubscriber";
 
 export class Excel {
-  constructor(selector, options) {
-    this.$el = $(selector);
+  constructor(options) {
     this.components = options.components || [];
 
     this.store = options.store;
@@ -15,6 +14,7 @@ export class Excel {
 
   getRoot() {
     const $root = $.create("div", "excel");
+
     const componentOptions = {
       emitter: this.emitter,
       store: this.store,
@@ -33,9 +33,7 @@ export class Excel {
     return $root;
   }
 
-  render() {
-    this.$el.append(this.getRoot());
-
+  init() {
     this.subscriber.subscribeComponents(this.components);
     this.components.forEach((component) => {
       component.init();
