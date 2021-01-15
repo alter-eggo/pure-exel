@@ -4,6 +4,7 @@ import {
   CHANGE_STYLES,
   APPLY_STYLE,
   CHANGE_TABLE_NAME,
+  CHANGE_OPEN_DATE,
 } from "./types";
 
 // Action creator
@@ -38,6 +39,13 @@ export function applyStyle(data) {
 export function changeTableName(data) {
   return {
     type: CHANGE_TABLE_NAME,
+    data,
+  };
+}
+
+export function changeOpenDate(data) {
+  return {
+    type: CHANGE_OPEN_DATE,
     data,
   };
 }

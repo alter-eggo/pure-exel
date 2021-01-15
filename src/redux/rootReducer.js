@@ -4,6 +4,7 @@ import {
   CHANGE_STYLES,
   APPLY_STYLE,
   CHANGE_TABLE_NAME,
+  CHANGE_OPEN_DATE,
 } from "./types";
 
 export function rootReducer(state, action) {
@@ -46,6 +47,11 @@ export function rootReducer(state, action) {
         currentTableName: action.data.value,
       };
 
+    case CHANGE_OPEN_DATE:
+      return {
+        ...state,
+        openDate: action.data.value,
+      };
     default:
       return state;
   }
