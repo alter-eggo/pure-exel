@@ -10,7 +10,7 @@ const CODES = {
 function toCell(state, row) {
   return function (_, col) {
     const id = `${row}:${col}`;
-    const data = state.dataState[id] || "";
+    const data = state?.dataState[id] || "";
     const styles = toInlineStyles({
       ...defaultStyles,
       ...state.stylesState[id],

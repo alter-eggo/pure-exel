@@ -30,6 +30,8 @@ export class Table extends ExcelComponent {
 
     this.selectCellInTable(this.$root.find('[data-id="0:0"]'));
 
+    this.$dispatch(actions.changeOpenDate({ value: new Date().getTime() }));
+
     this.$on("formula:input", (value) => {
       this.selection.current.attr("data-value", value).text(parse(value));
 
