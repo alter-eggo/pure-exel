@@ -1,5 +1,3 @@
-export function createStore() {}
-
 export class Store {
   constructor(rootReducer, initialState = {}) {
     this.rootReducer = rootReducer;
@@ -11,8 +9,8 @@ export class Store {
     this.listeners.push(fn);
 
     return {
-      unsubscribe() {
-        this.listeners?.filter((listener) => listener !== fn);
+      unsubscribe: () => {
+        this.listeners = this.listeners?.filter((listener) => listener !== fn);
       },
     };
   }
