@@ -1,3 +1,7 @@
+## Project description
+```
+This project is excel implementation, created like SPA using native JS
+```
 ## Project setup
 
 ```
