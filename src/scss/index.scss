@@ -8,6 +8,7 @@
 @import "variables";
 @import "mixins";
 @import "dashboard";
+@import "loader";
 
 * {
   margin: 0;
@@ -21,11 +22,10 @@ body {
   padding: 0 20px;
 }
 
-
 .excel {
   position: relative;
   color: #888;
   height: 100%;
   max-width: 100%;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
